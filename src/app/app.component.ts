@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'movies';
+
+  constructor() {
+    // debugger;
+    console.log(1);
+    console.log(2);
+  }
 }
