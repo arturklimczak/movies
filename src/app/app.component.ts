@@ -10,7 +10,5 @@ export class AppComponent {
 
   constructor() {
     // debugger;
-    console.log(1);
-    console.log(2);
   }
 }
