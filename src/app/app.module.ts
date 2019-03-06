@@ -14,6 +14,7 @@ import { PageContactComponent } from './pages/page-contact/page-contact.componen
 
 import { JumbotronDirective } from './directives/jumbotron/jumbotron.directive';
 import { HideMeDirective } from './directives/hide-me/hide-me.directive';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { HideMeDirective } from './directives/hide-me/hide-me.directive';
     MovieListComponent,
     MovieListItemComponent,
     MenuComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
