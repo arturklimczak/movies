@@ -18,6 +18,7 @@ import { PageMovieProfileComponent } from './core/pages/page-movie-profile/page-
 
 import { JumbotronDirective } from './core/directives/jumbotron/jumbotron.directive';
 import { HideMeDirective } from './core/directives/hide-me/hide-me.directive';
+import { SharedModule } from './shared/shared.module';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { HideMeDirective } from './core/directives/hide-me/hide-me.directive';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
