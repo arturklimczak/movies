@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MoviesService } from 'src/app/services/movies.service';
+import { MoviesService } from 'src/app/core/services/movies.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -9,7 +9,6 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PageMovieProfileComponent implements OnInit {
   movie = null;
-  movieUrl = 'https://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4';
 
   constructor(private moviesService: MoviesService, private route: ActivatedRoute) { }
 
