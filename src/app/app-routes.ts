@@ -30,6 +30,10 @@ export const routes: Routes =
         component: PageContactComponent
     },
     {
+        path: 'user',
+        loadChildren: './user/user.module#UserModule'
+    },
+    {
         path: '**',
         component: PageNotFoundComponent
     }

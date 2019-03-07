@@ -1,5 +1,5 @@
 <nav class="mb-5">
-  <ul class="nav">
+  <ul class="nav float-left">
     <li>
       <a
         class="btn btn-default mr-1"
@@ -15,6 +15,14 @@
     </li>
     <li>
       <a class="btn btn-default mr-1" routerLink="/contact" routerLinkActive="btn-primary" [routerLinkActiveOptions]="{ exact: true }">Kontakt</a>
+    </li>
+  </ul>
+  <ul class="nav float-right">
+    <li>
+      <a class="btn btn-default mr-1" routerLink="/user/register" routerLinkActive="btn-primary">Rejestracja</a>
+    </li>
+    <li>
+      <a class="btn btn-default mr-1" routerLink="/user/login" routerLinkActive="btn-primary">Login</a>
     </li>
   </ul>
 </nav>
