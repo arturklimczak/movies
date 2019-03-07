@@ -10,7 +10,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "deploy": "cross-env NODE_DEBUG=gh-pages gh-pages -d dist/movies/",
-    "predeploy": "ng build --base-href=/movies/"
+    "predeploy": "ng build --prod --base-href=/movies/"
   },
   "private": true,
   "dependencies": {
