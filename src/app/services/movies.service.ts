@@ -18,4 +18,10 @@ export class MoviesService {
     const movies = await this.fetchMovies();
     return movies.find(movie => movie.id === movieId);
   }
+
+  async fetchPromoMovies() {
+    const movies = await this.fetchMovies();
+    movies.length = 3;
+    return movies;
+  }
 }

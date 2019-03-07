@@ -13,7 +13,7 @@ export class PageHomeComponent implements OnInit {
   constructor(private moviesService: MoviesService) { }
 
   async ngOnInit() {
-    this.movies = await this.moviesService.fetchMovies();
+    this.movies = await this.moviesService.fetchPromoMovies();
   }
 
   addNumbers(a, b) {
