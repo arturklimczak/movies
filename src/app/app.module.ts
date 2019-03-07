@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -11,10 +12,12 @@ import { MenuComponent } from './components/menu/menu.component';
 import { PageHomeComponent } from './pages/page-home/page-home.component';
 import { PageMovieListComponent } from './pages/page-movie-list/page-movie-list.component';
 import { PageContactComponent } from './pages/page-contact/page-contact.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { PageMovieProfileComponent } from './pages/page-movie-profile/page-movie-profile.component';
 
 import { JumbotronDirective } from './directives/jumbotron/jumbotron.directive';
 import { HideMeDirective } from './directives/hide-me/hide-me.directive';
-import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+
 
 @NgModule({
   declarations: [
@@ -28,10 +31,12 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
     MovieListItemComponent,
     MenuComponent,
     PageNotFoundComponent,
+    PageMovieProfileComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
