@@ -8,6 +8,7 @@ import { AppComponent } from './components/app/app.component';
 import { MovieListComponent } from './components/movie-list/movie-list.component';
 import { MovieListItemComponent } from './components/movie-list-item/movie-list-item.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { VideoPlayerComponent } from './components/video-player/video-player.component';
 
 import { PageHomeComponent } from './pages/page-home/page-home.component';
 import { PageMovieListComponent } from './pages/page-movie-list/page-movie-list.component';
@@ -32,6 +33,7 @@ import { HideMeDirective } from './directives/hide-me/hide-me.directive';
     MenuComponent,
     PageNotFoundComponent,
     PageMovieProfileComponent,
+    VideoPlayerComponent,
   ],
   imports: [
     BrowserModule,

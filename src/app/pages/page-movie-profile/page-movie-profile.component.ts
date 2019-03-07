@@ -9,6 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PageMovieProfileComponent implements OnInit {
   movie = null;
+  movieUrl = 'https://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4';
 
   constructor(private moviesService: MoviesService, private route: ActivatedRoute) { }
 
@@ -16,5 +17,4 @@ export class PageMovieProfileComponent implements OnInit {
     const movieId = this.route.snapshot.params.id;
     this.movie = await this.moviesService.fetchMovieById(movieId);
   }
-
 }

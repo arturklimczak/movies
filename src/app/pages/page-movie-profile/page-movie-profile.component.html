@@ -1,11 +1,6 @@
 <ng-container *ngIf="movie">
-  <img
-    [src]="movie.thumb_url"
-    [alt]="movie.title"
-  >
-
+  <app-video-player [movie]="movie" class="mr-3 float-left"></app-video-player>
   <h2>{{ movie.title }}</h2>
-
   <p>{{ movie.description }}</p>
 </ng-container>
 
