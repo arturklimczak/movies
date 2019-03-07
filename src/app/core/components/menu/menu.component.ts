@@ -17,13 +17,13 @@ export class MenuComponent implements OnInit {
   constructor(private router: Router, private auth: AuthService) { }
 
   ngOnInit() {
+    this.verifyLoggedUser();
+
     this.router.events
       .pipe(
         filter((event) => event instanceof NavigationEnd)
       )
       .subscribe(this.verifyLoggedUser.bind(this));
-
-      this.verifyLoggedUser();
   }
 
   async verifyLoggedUser() {

@@ -92,4 +92,11 @@ export class AuthService {
       }
     });
   }
+
+  destroySession(): any {
+    return new Promise((res, rej) => {
+      this.localStorageService.remove('logged-user');
+      setTimeout(res, 200, {status: 'ok'})
+    })
+  }
 }
