@@ -23,6 +23,7 @@ export class PageUserLoginComponent implements OnInit {
   async handleSubmit() {
     try {
       await this.auth.authenticate(this.user);
+      await this.auth.saveLoggedUser(this.user);
       this.router.navigate(['/']);
     } catch (e) {
       this.errorMessage = 'Niepoprawne dane logowania';
