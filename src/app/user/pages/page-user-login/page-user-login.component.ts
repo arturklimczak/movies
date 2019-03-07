@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/shared/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-page-user-login',
@@ -9,15 +11,21 @@ export class PageUserLoginComponent implements OnInit {
   user = {
     email: null,
     password: null
-  }
+  };
 
-  constructor() { }
+  errorMessage: string = null;
+
+  constructor(private auth: AuthService, private router: Router) { }
 
   ngOnInit() {
   }
 
-  handleSubmit() {
-    console.log(this.user);
+  async handleSubmit() {
+    try {
+      await this.auth.authenticate(this.user);
+      this.router.navigate(['/']);
+    } catch (e) {
+      this.errorMessage = 'Niepoprawne dane logowania';
+    }
   }
-
 }

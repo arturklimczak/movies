@@ -11,10 +11,29 @@ export class AuthService {
 
   register(formData: any): any {
     return new Promise((resolve, reject) => {
-      this.localStorageService.save('user', formData);
+      const users = this.localStorageService.get('users') || [];
+      users.push(formData);
+      this.localStorageService.save('users', users);
+
       setTimeout(() => {
         resolve({status: 'ok'});
       }, 400);
     })
+  }
+
+  authenticate(formData: any) {
+    return new Promise((res, rej) => {
+      const users = this.localStorageService.get('users') || [];
+      const status = users.find((user) => {
+        return user.email === formData.email
+          && user.password === formData.password;
+      });
+
+      if (status) {
+        res({status: 'ok'});
+      } else {
+        rej({status: 'error'});
+      }
+    });
   }
 }

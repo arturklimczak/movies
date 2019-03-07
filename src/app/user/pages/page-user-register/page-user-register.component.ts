@@ -9,6 +9,8 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 })
 export class PageUserRegisterComponent implements OnInit {
 
+  isRegistrationSuccess = false;
+
   registerForm = new FormGroup({
     email: new FormControl(''),
     password: new FormControl(''),
@@ -28,8 +30,11 @@ export class PageUserRegisterComponent implements OnInit {
 
   async handleSubmit() {
     const formData = this.registerForm.getRawValue();
-    const status = await this.auth.register(formData);
+    const result = await this.auth.register(formData);
     console.log(status);
+    if (result.status === 'ok') {
+      this.isRegistrationSuccess = true;
+    }
   }
 
 }
