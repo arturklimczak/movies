@@ -27,6 +27,7 @@ export class PageNotFoundComponent implements OnInit {
 
   handleStatus(event) {
     console.log(event);
+    
     switch (event.status) {
       case 'playing':
         this.playerStatus = 'Player is playing';

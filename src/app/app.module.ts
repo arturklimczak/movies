@@ -19,6 +19,8 @@ import { PageMovieProfileComponent } from './core/pages/page-movie-profile/page-
 import { JumbotronDirective } from './core/directives/jumbotron/jumbotron.directive';
 import { HideMeDirective } from './core/directives/hide-me/hide-me.directive';
 import { SharedModule } from './shared/shared.module';
+import { PageAuthorsComponent } from './core/pages/page-authors/page-authors.component';
+import { BaseFooterComponent } from './core/components/base-footer/base-footer.component';
 
 
 @NgModule({
@@ -35,6 +37,8 @@ import { SharedModule } from './shared/shared.module';
     PageNotFoundComponent,
     PageMovieProfileComponent,
     VideoPlayerComponent,
+    PageAuthorsComponent,
+    BaseFooterComponent,
   ],
   imports: [
     BrowserModule,

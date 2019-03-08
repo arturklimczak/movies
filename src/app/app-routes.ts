@@ -5,6 +5,8 @@ import { PageMovieListComponent } from './core/pages/page-movie-list/page-movie-
 import { PageContactComponent } from './core/pages/page-contact/page-contact.component';
 import { PageNotFoundComponent } from './core/pages/page-not-found/page-not-found.component';
 import { PageMovieProfileComponent } from './core/pages/page-movie-profile/page-movie-profile.component';
+import { PageAuthorsComponent } from './core/pages/page-authors/page-authors.component';
+import { AuthGuard } from './core/guards/auth.guard';
 
 export const routes: Routes =
 [
@@ -32,6 +34,11 @@ export const routes: Routes =
     {
         path: 'user',
         loadChildren: './user/user.module#UserModule'
+    },
+    {
+        path: 'authors',
+        component: PageAuthorsComponent,
+        canActivate: [AuthGuard]
     },
     {
         path: '**',
