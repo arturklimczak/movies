@@ -1,5 +1,5 @@
-<div class="card">
-  <img [src]="movie?.thumb_url" class="card-img-top" alt="..." (click)="redirectMovieProfile()">
+<div class="card" *ngIf="movie">
+  <img [src]="movie.thumb_url" class="card-img-top" alt="..." (click)="redirectMovieProfile()">
   <div>
     <h5 class="card-title">
       {{ movie?.title }}

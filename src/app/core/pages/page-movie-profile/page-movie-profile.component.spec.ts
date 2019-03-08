@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PageMovieProfileComponent } from './page-movie-profile.component';
+import { VideoPlayerComponent } from '../../components/video-player/video-player.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('PageMovieProfileComponent', () => {
   let component: PageMovieProfileComponent;
@@ -8,7 +11,8 @@ describe('PageMovieProfileComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PageMovieProfileComponent ]
+      declarations: [ PageMovieProfileComponent, VideoPlayerComponent ],
+      imports: [ HttpClientTestingModule, RouterTestingModule ]
     })
     .compileComponents();
   }));
