@@ -13,18 +13,12 @@ export class PageHomeComponent implements OnInit {
   constructor(private moviesService: MoviesService) { }
 
   async ngOnInit() {
-    this.movies = await this.moviesService.fetchPromoMovies();
+    console.log('ngOnInit');
+    this.movies = await this.getPromoMovies();
   }
 
-  addNumbers(a, b) {
-    if (typeof(a) !== 'number') {
-        return null;
-    }
-
-    if (typeof(b) !== 'number') {
-      return null;
-    }
-
-    return a + b;
+  async getPromoMovies() {
+    console.log('getPromoMovies');
+    return await this.moviesService.fetchPromoMovies();
   }
 }
