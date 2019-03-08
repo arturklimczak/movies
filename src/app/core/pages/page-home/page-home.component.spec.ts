@@ -35,7 +35,7 @@ describe('PageHomeComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  fit('should display thumb list', fakeAsync(() => {
+  it('should display thumb list', fakeAsync(() => {
     const movie: Movie = {
       id: 'fake-id',
       title: 'fake-title',

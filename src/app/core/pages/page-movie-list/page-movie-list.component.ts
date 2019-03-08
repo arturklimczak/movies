@@ -14,7 +14,11 @@ export class PageMovieListComponent implements OnInit {
   constructor(private moviesService: MoviesService) { }
 
   async ngOnInit() {
-    this.movies = await this.moviesService.fetchMovies();
+    this.movies = await this.getMovies();
+  }
+
+  async getMovies() {
+    return await this.moviesService.fetchMovies();
   }
 
 }
