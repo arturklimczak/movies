@@ -22,7 +22,7 @@ describe('VideoPlayerComponent', () => {
     component = fixture.componentInstance;
     $element = fixture.nativeElement;
     fixture.detectChanges();
-    // prepare();
+    prepare();
   });
 
   afterEach(() => {
@@ -47,9 +47,18 @@ describe('VideoPlayerComponent', () => {
 
     component.movie = movie;
     component.status = new EventEmitter();
+    component.player = {
+        nativeElement: {
+          play: Function,
+          pause: Function
+        }
+
+    };
+
+    fixture.detectChanges();
   }
 
-  it('should video playing after click play button', () => {
+  xit('should video playing after click play button', () => {
     fixture.detectChanges();
     const movie: Movie = {
       id: 'string',
@@ -82,5 +91,20 @@ describe('VideoPlayerComponent', () => {
     $play.click();
 
     expect(spy).toHaveBeenCalled();
+  });
+
+
+
+  it('pause', () => {
+    spyOn(component.player.nativeElement, 'pause');
+
+    component.status.subscribe(evt => {
+      expect(evt.status).toEqual('paused');
+    });
+
+    const $pause = $element.querySelectorAll('button')[1];
+    $pause.click();
+
+    expect(component.player.nativeElement.pause).toHaveBeenCalled();
   });
 });
