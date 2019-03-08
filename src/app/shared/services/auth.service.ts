@@ -78,14 +78,14 @@ export class AuthService {
     });
   }
 
-  getLoggedUserName(): Promise<string> {
+  getLoggedUserName(): Promise<User> {
     return new Promise((res, rej) => {
       const loggedUser = this.localStorageService.get('logged-user');
 
       if (loggedUser) {
         this.getUserByEmail(loggedUser)
           .then((user) => {
-            setTimeout(res, 200, `${user.person.name} ${user.person.surname}`);
+            setTimeout(res, 200, user);
           })
       } else {
         setTimeout(res, 200, `Unknown`);

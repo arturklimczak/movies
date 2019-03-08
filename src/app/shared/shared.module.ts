@@ -4,11 +4,15 @@ import { CommonModule } from '@angular/common';
 import { AuthService } from './services/auth.service';
 import { CacheInterceptor } from './interceptors/cache.interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { UserDisplayNamePipe } from './pipes/user-display-name.pipe';
 
 @NgModule({
-  declarations: [],
+  declarations: [UserDisplayNamePipe],
   imports: [
     CommonModule
+  ],
+  exports: [
+    UserDisplayNamePipe
   ],
   providers: [
     AuthService,
