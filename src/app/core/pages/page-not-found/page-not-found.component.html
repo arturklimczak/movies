@@ -1,3 +1,8 @@
+<app-video-player
+  [movie]="movie"
+  (status)="handleStatus($event)"
+></app-video-player>
+
 <p>
-  nie znaleziono strony
+  {{ playerStatus}}
 </p>
