@@ -3,6 +3,7 @@ import { Router, NavigationEnd } from '@angular/router';
 
 import { filter } from 'rxjs/operators'
 import { AuthService } from 'src/app/shared/services/auth.service';
+import { User } from 'src/app/shared/interfaces/user';
 
 @Component({
   selector: 'app-menu',
@@ -12,7 +13,7 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 export class MenuComponent implements OnInit {
 
   isLoggedUser = false;
-  loggedUserName = '';
+  loggedUserName: User = null;
 
   constructor(private router: Router, private auth: AuthService) { }
 
