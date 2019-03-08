@@ -24,7 +24,7 @@ export class PageUserLoginComponent implements OnInit {
     try {
       await this.auth.authenticate(this.user);
       await this.auth.saveLoggedUser(this.user);
-      this.router.navigate(['/']);
+      this.router.navigate(['/user/profile']);
     } catch (e) {
       this.errorMessage = 'Niepoprawne dane logowania';
     }

@@ -7,7 +7,7 @@
       <label>Email</label>
       <input
         type="email"
-        class="form-control"
+        class="form-control email-field"
         placeholder="Wpisz adres email"
         name="email"
         #email="ngModel"
@@ -26,7 +26,7 @@
       <label>Hasło</label>
       <input
         type="password"
-        class="form-control"
+        class="form-control password-field"
         placeholder="Wpisz hasło"
         name="password"
         #password="ngModel"
@@ -41,6 +41,6 @@
           <span *ngIf="password.touched && password.errors?.minlength">Pole hasło jest za krótkie</span>
         </small>
     </div>
-    <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Zaloguj</button>
+    <button type="submit" class="btn btn-primary submit-button" [disabled]="loginForm.invalid">Zaloguj</button>
   </form>
 </div>
